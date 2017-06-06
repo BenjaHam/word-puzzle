@@ -1,24 +1,22 @@
-$(document).ready(function(event) {
-  $("#submitButton").click(function() {
+$(document).ready(function() {
+  $("#submitButton").click(function(event) {
+    event.preventDefault();
     var submitText = $("#textPrompt").val();
     var newText = "";
 
       for (var idx = 0; idx < submitText.length; idx += 1) {
         // alert(submitText[idx]);
         if (submitText[idx] === "a" || submitText[idx] === "e" || submitText[idx] === "i" || submitText[idx] === "o" || submitText[idx] === "u") {
-          console.log(idx);
+          // console.log(idx);
           newText = newText + "-";
-          console.log(newText);
+          // console.log(newText);
         } else {
-          console.log(idx);
+          // console.log(idx);
           newText = newText + submitText[idx];
-          console.log(newText);
+          // console.log(newText);
         };
       };
-    alert("You've successfully submitted!");
-    // $("#result").append("<p>" + newText + "</p>");
+    // alert(newText);
+    $("#result").append("<h2>" + newText + "</h2>");
   });
-
-
-  event.preventDefault;
 });
